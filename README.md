@@ -1,9 +1,56 @@
 # python-calculator
-The Python Calculator is a versatile tool designed to perform various mathematical computations efficiently. Built using Python programming language, this calculator offers a user-friendly interface and supports a wide range of mathematical operations, making it suitable for both beginners and experienced users alike.
-#Getting started
-This Program run on both Windows and Linux operating system by using pycharm, anaconda 3 or all other python editor with the python version 3.x
-This software is developed by python 3.x
-Used tkinter module for the Graphical User Interface
-It performs Addition, Subtraction, Multiplication and Division only for two numbers
-It is more secure which means you may not enter other anything except the numerical values
-It is more relevant and easy to use for an user
+# This function adds two numbers
+def add(a+b):
+    return a+b
+
+# This function subtracts two numbers
+def subtract(a,b):
+    return a - b
+
+# This function multiplies two numbers
+def multiply(a,b):
+    return a*b
+
+# This function divides two numbers
+def divide(a,b):
+    return a / b
+
+
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
+
+while True:
+    # take input from the user
+    choice = input("Enter choice(1/2/3/4): ")
+
+    # check if choice is one of the four options
+    if choice in ('1', '2', '3', '4'):
+        try:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
+
+        if choice == '1':
+            print(num1, "+", num2, "=", add(num1, num2))
+
+        elif choice == '2':
+            print(num1, "-", num2, "=", subtract(num1, num2))
+
+        elif choice == '3':
+            print(num1, "*", num2, "=", multiply(num1, num2))
+
+        elif choice == '4':
+            print(num1, "/", num2, "=", divide(num1, num2))
+        
+        # check if user wants another calculation
+        # break the while loop if answer is no
+        next_calculation = input("Let's do next calculation? (yes/no): ")
+        if next_calculation == "no":
+          break
+    else:
+        print("Invalid Input")
